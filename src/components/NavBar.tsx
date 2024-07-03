@@ -5,6 +5,7 @@ import Logo from "../../public/Logo.png";
 import Search from "./Search";
 import { currentUser } from "@clerk/nextjs/server";
 import { SignInButton, SignedIn, SignedOut, UserButton } from "@clerk/nextjs";
+import { ShoppingCart } from "lucide-react";
 
 export default async function NavBar() {
   const user = await currentUser();
@@ -12,7 +13,7 @@ export default async function NavBar() {
   return (
     <section className="my-2">
       <div className="">
-        <nav className="flex justify-evenly items-center bg-pink-500 py-4">
+        <nav className="flex justify-evenly items-center bg-blue-500 py-4">
           <Link href={"/"}>
             <Image src={Logo} alt="logo" width={50} height={50} />
           </Link>
@@ -22,12 +23,18 @@ export default async function NavBar() {
               <SignInButton />
             </div>
           </SignedOut>
+          <Link href={"/cart"}>
+              <ShoppingCart className="text-white mr-3"></ShoppingCart>
+            </Link>
           <SignedIn>
+          
             <div className="flex items-center space-x-4">
               {user && (
                 <>
                   <div className="flex items-center space-x-2">
-                    {user.imageUrl && <UserButton userProfileUrl={user.imageUrl}/>}
+                    {user.imageUrl && (
+                      <UserButton userProfileUrl={user.imageUrl} />
+                    )}
                     <span className="text-sm font-medium text-white">
                       {user.firstName} {user.lastName}
                     </span>
