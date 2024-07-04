@@ -13,9 +13,16 @@ export default async function NavBar() {
   return (
     <section className="my-2">
       <div className="">
-        <nav className="flex justify-evenly items-center bg-blue-500 py-4">
+        <nav className="flex justify-evenly items-center bg-blue-400 py-4">
           <Link href={"/"}>
-            <Image src={Logo} alt="logo" width={50} height={50} />
+            <Image
+              src={
+                "https://static-assets-web.flixcart.com/batman-returns/batman-returns/p/images/fkheaderlogo_plus-055f80.svg"
+              }
+              alt="logo"
+              width={200}
+              height={50}
+            />
           </Link>
           <Search />
           <SignedOut>
@@ -24,10 +31,9 @@ export default async function NavBar() {
             </div>
           </SignedOut>
           <Link href={"/cart"}>
-              <ShoppingCart className="text-white mr-3"></ShoppingCart>
-            </Link>
+            <ShoppingCart className="text-white mr-3"></ShoppingCart>
+          </Link>
           <SignedIn>
-          
             <div className="flex items-center space-x-4">
               {user && (
                 <>
