@@ -1,7 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
-import Logo from "../../public/Logo.png";
+import React, { useState } from "react";
 import Search from "./Search";
 import { currentUser } from "@clerk/nextjs/server";
 import { SignInButton, SignedIn, SignedOut, UserButton } from "@clerk/nextjs";
@@ -9,6 +8,8 @@ import { ShoppingCart } from "lucide-react";
 
 export default async function NavBar() {
   const user = await currentUser();
+
+
 
   return (
     <section className="my-2">
@@ -24,7 +25,7 @@ export default async function NavBar() {
               height={50}
             />
           </Link>
-          <Search />
+          <Search/>
           <SignedOut>
             <div className="border-2 text-white px-4 py-2 rounded-lg">
               <SignInButton />
