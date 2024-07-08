@@ -3,13 +3,8 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import NavBar from "@/components/NavBar";
 import Footer from "@/components/Footer";
-import {
-  ClerkProvider,
-  SignInButton,
-  SignedIn,
-  SignedOut,
-  UserButton,
-} from "@clerk/nextjs";
+import { ClerkProvider } from "@clerk/nextjs";
+import { Suspense } from "react";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -24,13 +19,13 @@ export default function RootLayout({
 }>) {
   return (
     <ClerkProvider>
-      <html lang="en">
-        <body className={`${inter.className} flex flex-col  min-h-screen`}>
-          <NavBar />
-          <div className="flex-grow">{children}</div>
-          <Footer />
-        </body>
-      </html>
+        <html lang="en">
+          <body className={`${inter.className} flex flex-col  min-h-screen`}>
+            <NavBar />
+            <div className="flex-grow">{children}</div>
+            <Footer />
+          </body>
+        </html>
     </ClerkProvider>
   );
 }

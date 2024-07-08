@@ -48,7 +48,7 @@ function ProductList() {
 
   const handleCategory = async (category: string) => {
     try {
-      let endpoint = `https://fakestoreapi.com/products?limit=16`;
+      let endpoint = `https://fakestoreapi.com/products`;
       if (category.toLocaleLowerCase() !== "all") {
         endpoint = `https://fakestoreapi.com/products/category/${category}`;
       }
