@@ -14,7 +14,7 @@ export default async function NavBar() {
   return (
     <section className="my-2">
       <div className="">
-        <nav className="flex justify-evenly items-center bg-blue-400 py-4">
+        <nav className="flex justify-evenly items-center bg-blue-500 py-4">
           <Link href={"/"}>
             <Image
               src={
